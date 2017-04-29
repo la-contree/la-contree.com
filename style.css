@@ -3,8 +3,16 @@ body {
     margin: 0;
     font-size: 16px;
 }
+section {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
 article {
-    width: 6em;
-    height: 8em;
+    height: 20em;
+    margin: 1em;
     background: #ccc;
 }
