@@ -5,13 +5,20 @@ body {
     font-family: "Open Sans", Arial, sans-serif;
     background: #D7D7D7;
 }
+
 header {
     padding: 0;
     margin: 0;
     background: #373641;
-    height: 8em;
     color: #B0FFBD;
+    height: 8em;
 }
+
+header h1 {
+    margin: 0;
+    padding: 1.2em 1.8em;
+}
+
 section {
     padding: 0;
     margin: 3em;
@@ -20,34 +27,48 @@ section {
     flex-flow: row wrap;
     align-items: stretch;
 }
-h1 {
-    margin: 0;
-    padding: 1.2em 1.8em; 
-}
-h2 {
-    margin: .6em;
+
+section h2 {
+    margin: 1em;
     width: 100%;
 }
-h3 {
-    margin: 0;
-    font-size: 2em;
-}
+
 article {
     height: 30em;
-    width: 20em;
-    margin: 1em;
+    width: 16em;
     background: #E6E6E6;
-    padding: 0.5em;
+    padding: 2em;
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    -webkit-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
 }
-img {
-    display: block;
-    margin: 1em auto;
+
+article h3 {
+    margin: 0;
+    font-size: 1.5em;
 }
-p {
-    margin: 0.1em;
-    font-size: 1.2em;
-}
-.baseline {
+
+article .baseline {
     font-style: italic;
     font-size: 1em;
+}
+
+article img {
+    border: .5em solid white;
+    border-bottom-width: 2.5em;
+    margin: 1.9em;
+    -webkit-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
+}
+
+article p {
+    margin: 0.1em;
+    font-size: 1em;
+}
+
+article a {
+    justify-content: flex-end;
 }
