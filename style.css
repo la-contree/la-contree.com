@@ -81,3 +81,26 @@ article p {
 article a {
     margin-top: 1rem;
 }
+
+/* Template Formation */
+.formation p {
+    margin: 0 0 1rem;
+}
+
+.formation a {
+    margin: 0;
+}
+
+.tags {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.tags li {
+    display: inline-block;
+}
+
+.tags li:not(:last-child):after {
+    content: ',';
+}
