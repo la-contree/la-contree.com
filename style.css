@@ -2,80 +2,104 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px;
+    line-height: 1.2;
+    color: #4d4d4d;
     font-family: "Open Sans", Arial, sans-serif;
-    background: #D7D7D7;
+    background: #fff;
 }
 
+/* COMMON */
+h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #3caf87;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #3caf87;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    color: rgba(255, 100, 30, .8);
+}
+
+blockquote {
+    margin: 0;
+    padding: 2rem;
+    font-style: italic;
+    background-color: #f2f2f2;
+}
+
+/* HEADER */
 header {
     padding: 0;
     margin: 0;
-    background: #373641;
-    color: #B0FFBD;
-    height: 8em;
+    color: #fff;
+    text-align: center;
+    background: rgba(255, 100, 30, .8);
+}
+
+header h1,
+header p {
+    margin: 0;
 }
 
 header h1 {
     margin: 0;
-    padding: 1.2em 1.8em;
+    padding: 2rem 0;
+    font-size: 3rem;
 }
 
-.intro h1 {
-    font-size: 2em;
+header p {
+    padding:0 0 2rem;
 }
 
-.intro h1 span {
-    display: block;
-    font-size: .8em;
-    font-weight: normal;
-    font-style: italic;
-}
-
+/* CONTENT */
 section {
     padding: 0;
-    margin: 3em;
-}
-
-section h2 {
-    margin: 1em;
-    width: 100%;
+    margin: 3rem;
 }
 
 article {
-    background: #E6E6E6;
-    padding: 2em;
+    background: #f2f2f2;
+    padding: 2rem;
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     flex-flow: column wrap;
-    -webkit-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
-    -moz-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
+    box-shadow: 0 .1rem .3em rgba(0, 0, 0, .25);
 }
 
 article h3 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 article .baseline {
     font-style: italic;
     font-weight: normal;
-    font-size: .7em;
+    font-size: .7rem;
     display: block;
 }
 
 article img {
     width: 188px;
     height: 188px;
-    border: .5em solid white;
-    border-bottom-width: 3em;
-    margin: 1em auto;
-    -webkit-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
-    -moz-box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
+    border: .5rem solid white;
+    border-bottom-width: 3rem;
+    margin: 1rem auto;
+    box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .25);
 }
 
 article p {
-    margin: 0.1em;
-    font-size: 1em;
+    margin: 0.1rem;
+    font-size: 1rem;
 }
 
 article a {
