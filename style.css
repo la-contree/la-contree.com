@@ -128,3 +128,18 @@ article a {
 .tags li:not(:last-child):after {
     content: ',';
 }
+
+/* FOOTER */
+footer {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    background: #3caf87;;
+}
+
+footer p {
+    margin: 0;
+    padding: 2rem 0;
+    font-size: 1rem;
+}
