@@ -106,6 +106,10 @@ article a {
     margin-top: 1rem;
 }
 
+article.links {
+    display: inline;
+}
+
 /* Template Formation */
 .formation p {
     margin: 0 0 1rem;
