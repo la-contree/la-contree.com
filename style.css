@@ -110,6 +110,10 @@ article.links {
     display: inline;
 }
 
+article i {
+    color: #3caf87;
+}
+
 /* Template Formation */
 .formation p {
     margin: 0 0 1rem;
