@@ -114,6 +114,22 @@ article i {
     color: #3caf87;
 }
 
+article div.skills {
+    display: flex;
+
+}
+
+article div.skills div {
+    flex-grow: 1;
+}
+
+article h4 {
+}
+
+article ul.formations {
+    margin-top: 0;
+}
+
 /* Template Formation */
 .formation p {
     margin: 0 0 1rem;
