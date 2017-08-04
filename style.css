@@ -77,8 +77,9 @@ header h1 span {
 }
 
 header p {
-    padding:0 0 6rem;
-    font-weight: 600;
+    padding:0 0 3rem;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 /* CONTENT */
