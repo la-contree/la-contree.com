@@ -1,3 +1,13 @@
+/*
+#AAEC98
+#80D55F
+#4CAB47
+#1E7A2F
+#0B4C17
+#102E09
+*/
+
+
 body {
     padding: 0;
     margin: 0;
@@ -42,7 +52,7 @@ header {
     margin: 0;
     color: #fff;
     text-align: center;
-    background: rgba(255, 100, 30, .8);
+    background: #80D55F;
 }
 
 header h1,
