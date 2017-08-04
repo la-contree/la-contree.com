@@ -80,7 +80,8 @@ header p {
 /* CONTENT */
 section {
     padding: 0;
-    margin: 3rem;
+    margin: 3rem 0;
+    padding: 0 3rem;
 }
 
 .intro {
