@@ -69,11 +69,12 @@ header h1 {
 }
 
 header h1 span {
-    font-size: 4.5rem;
+    font-size: 4.8rem;
 }
 
 header p {
     padding:0 0 6rem;
+    font-weight: 600;
 }
 
 /* CONTENT */
