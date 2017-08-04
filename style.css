@@ -15,7 +15,7 @@ body {
     line-height: 1.2;
     color: #fff;
     font-family: overpass, sans-serif;
-    background: #206643;
+    background: #339966;
 }
 
 /* COMMON */
@@ -43,7 +43,7 @@ blockquote {
     margin: 0;
     padding: 2rem;
     font-style: italic;
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
 }
 
 /* HEADER */
@@ -81,6 +81,11 @@ header p {
 section {
     padding: 0;
     margin: 3rem;
+}
+
+.intro {
+    padding: 1rem 2rem 0 2rem;
+    background-color: #206643;
 }
 
 article {
