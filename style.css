@@ -114,6 +114,11 @@ article i {
     color: #3caf87;
 }
 
+article i.fa-sitemap {
+    color: rgba(255, 100, 30, .8);
+    margin-right: 0.6rem;
+}
+
 /* Template Formation */
 .formation p {
     margin: 0 0 1rem;
