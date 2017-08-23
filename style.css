@@ -51,9 +51,10 @@ a {
 }
 
 blockquote {
-    margin: 0;
-    padding: 2rem;
+    margin: 2rem 2rem 2rem 1rem;
+    padding: 0 0 0 1rem;
     font-style: italic;
+    border-left: 3px solid #92e080;
     /*background-color: #f2f2f2;*/
 }
 
