@@ -75,8 +75,13 @@ dl:not(:last-child) {
 }
 
 dt {
+    font-size: 18px;
     color: #03955e;
     font-weight: bold;
+}
+
+dd {
+    margin-top: 10px;
 }
 /* HEADER */
 header {
