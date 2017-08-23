@@ -183,6 +183,18 @@ article a {
     border: none;
 }
 
+#trainers,
+#trainings {
+    width: 1000px;
+}
+
+#trainers h2,
+#trainings h2 {
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .links {
     display: inline;
     margin-top: 16px;
@@ -202,6 +214,8 @@ article a {
 .links a:first-child i {
     margin-left: 0;
 }
+
+
 
 /* Template Formation */
 .formation p {
