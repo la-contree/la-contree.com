@@ -48,8 +48,9 @@ p {
 
 a {
     color: #fff;
+    font-weight: 500;
     text-decoration: none;
-    border-bottom: 1px solid #92e080;
+    border-bottom: 2px solid #92e080;
 }
 
 ul {
