@@ -35,7 +35,7 @@ h2 {
 h3 {
     margin-bottom: 1rem;
     font-size: 1.4rem;
-    color: #0B4C17;
+    color: #003428;
 }
 
 h3:not(:first-child) {
@@ -142,12 +142,13 @@ section:first-of-type {
 }
 
 article {
-    background: #f2f2f2;
-    padding: 2rem;
-    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     flex-flow: column wrap;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background: #f2f2f2;
+    color: #003428;
     box-shadow: 0 .1rem .3em rgba(0, 0, 0, .25);
 }
 
@@ -179,14 +180,27 @@ article p {
 
 article a {
     margin-top: 1rem;
+    border: none;
 }
 
-article.links {
+.links {
     display: inline;
+    margin-top: 16px;
 }
 
-article i {
-    color: #3caf87;
+.links i {
+    margin: 0 16px;
+    font-size: 24px;
+    color: #003428;
+    transition: color 0.3s ease-in-out
+}
+
+.links a:hover i {
+    color: #92e080;
+}
+
+.links a:first-child i {
+    margin-left: 0;
 }
 
 /* Template Formation */
