@@ -32,12 +32,6 @@ h2 {
     color: #92e080;
 }
 
-h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    color: #003428;
-}
-
 h3:not(:first-child) {
     margin-top: 3rem;
 }
@@ -247,9 +241,9 @@ article a:hover {
 footer {
     padding: 0;
     margin: 0;
-    color: #fff;
+    color: #003428;
     text-align: center;
-    background: #3caf87;;
+    background: #92e080;;
 }
 
 footer p {
