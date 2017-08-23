@@ -175,8 +175,9 @@ article p {
 article a {
     align-self: flex-start;
     margin-top: 1rem;
-    border: none;
     color: #003428;
+    font-weight: 600;
+    border: none;
     border-bottom: 2px solid #03955e;
 }
 
