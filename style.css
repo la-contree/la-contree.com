@@ -66,6 +66,18 @@ blockquote {
     /*background-color: #f2f2f2;*/
 }
 
+dl:first-of-type {
+    margin-top: 3rem;
+}
+
+dl:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+dt {
+    color: #03955e;
+    font-weight: bold;
+}
 /* HEADER */
 header {
     display: flex;
