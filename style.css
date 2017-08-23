@@ -1,24 +1,39 @@
+/*
+#AAEC98
+#80D55F
+#4CAB47
+#1E7A2F
+#0B4C17
+#102E09
+*/
+
+
 body {
     padding: 0;
     margin: 0;
     font-size: 16px;
-    line-height: 1.2;
-    color: #4d4d4d;
-    font-family: "Open Sans", Arial, sans-serif;
-    background: #fff;
+    line-height: 1.5;
+    color: #fff;
+    font-family: overpass, sans-serif;
+    background: #003428;
 }
 
 /* COMMON */
+
+@font-face {
+  font-family: 'falling-sky_black';
+  src:  url('fonts/FallingSkyBlk.woff2') format('woff2'),
+  url('fonts/FallingSkyBlk.woff') format('woff');
+}
+
 h2 {
     margin: 1rem 0;
     font-size: 1.5rem;
-    color: #3caf87;
+    color: #92e080;
 }
 
-h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    color: #3caf87;
+h3:not(:first-child) {
+    margin-top: 3rem;
 }
 
 p {
@@ -26,23 +41,64 @@ p {
 }
 
 a {
-    color: rgba(255, 100, 30, .8);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid #92e080;
+    transition: color 0.3s ease-in-out
+}
+
+a:hover {
+    color: #92e080;
+}
+
+ul {
+    margin-bottom: 35px;
+}
+
+ul > li:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 blockquote {
-    margin: 0;
-    padding: 2rem;
+    margin: 2rem 2rem 2rem 1rem;
+    padding: 0 0 0 1rem;
     font-style: italic;
-    background-color: #f2f2f2;
+    border-left: 3px solid #92e080;
+    /*background-color: #f2f2f2;*/
 }
+
+dl:first-of-type {
+    margin-top: 3rem;
+}
+
+dl:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+dt {
+    font-size: 18px;
+    color: #92e080;
+}
+
+dd {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 
 /* HEADER */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 610px;
     padding: 0;
     margin: 0;
-    color: #fff;
+    font-family: "falling-sky_black", sans-serif;
+    color: #002920;
     text-align: center;
-    background: rgba(255, 100, 30, .8);
+    background: url(img/header.png) center center no-repeat;
 }
 
 header h1,
@@ -52,27 +108,41 @@ header p {
 
 header h1 {
     margin: 0;
-    padding: 2rem 0;
-    font-size: 3rem;
+    padding: 0;
+    font-size: 55px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    font-size: 83px;
 }
 
 header p {
-    padding:0 0 2rem;
+    padding:0 0 3rem;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 /* CONTENT */
 section {
+    width: 800px;
     padding: 0;
-    margin: 3rem;
+    margin: 3rem auto;
+}
+
+section:first-of-type {
+    margin-top: 0;
 }
 
 article {
-    background: #f2f2f2;
-    padding: 2rem;
-    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     flex-flow: column wrap;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background: #f2f2f2;
+    color: #003428;
     box-shadow: 0 .1rem .3em rgba(0, 0, 0, .25);
 }
 
@@ -84,7 +154,7 @@ article h3 {
 article .baseline {
     font-style: italic;
     font-weight: normal;
-    font-size: .9rem;
+    font-size: 1rem;
     display: block;
 }
 
@@ -103,8 +173,47 @@ article p {
 }
 
 article a {
+    align-self: flex-start;
     margin-top: 1rem;
+    color: #003428;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid #03955e;
 }
+
+article a:hover {
+    color: #03955e;
+}
+
+#trainers,
+#trainings {
+    width: 1000px;
+}
+
+.links {
+    display: inline;
+    margin-top: 16px;
+}
+.links a {
+    border: none;
+}
+
+.links i {
+    margin: 0 8px;
+    font-size: 24px;
+    color: #003428;
+    transition: color 0.3s ease-in-out
+}
+
+.links a:hover i {
+    color: #03955e;
+}
+
+.links a:first-child i {
+    margin-left: 0;
+}
+
+
 
 /* Template Formation */
 .formation p {
@@ -127,4 +236,19 @@ article a {
 
 .tags li:not(:last-child):after {
     content: ',';
+}
+
+/* FOOTER */
+footer {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #fff;
+}
+
+footer p {
+    margin: 0;
+    padding: 2rem 0;
+    font-size: 1rem;
 }
