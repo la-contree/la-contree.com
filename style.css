@@ -47,7 +47,9 @@ p {
 }
 
 a {
-    color: rgba(255, 100, 30, .8);
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #92e080;
 }
 
 ul {
