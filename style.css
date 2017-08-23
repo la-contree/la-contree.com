@@ -96,9 +96,9 @@ header p {
 
 /* CONTENT */
 section {
+    width: 800px;
     padding: 0;
-    margin: 3rem 0;
-    padding: 0 3rem;
+    margin: 3rem auto;
 }
 
 .intro {
