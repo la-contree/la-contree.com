@@ -19,6 +19,13 @@ body {
 }
 
 /* COMMON */
+
+@font-face {
+  font-family: 'falling-sky_black';
+  src:  url('../fonts/FallingSkyBlk.woff2') format('woff2'),
+  url('../fonts/FallingSkyBlk.woff') format('woff');
+}
+
 h2 {
     margin: 1rem 0;
     font-size: 1.5rem;
@@ -58,6 +65,7 @@ header {
     min-height: 610px;
     padding: 0;
     margin: 0;
+    font-family: "falling-sky_black", sans-serif;
     color: #002920;
     text-align: center;
     background: url(img/header.png) center center no-repeat;
