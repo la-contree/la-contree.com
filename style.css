@@ -179,8 +179,15 @@ article p {
 }
 
 article a {
+    align-self: flex-start;
     margin-top: 1rem;
     border: none;
+    color: #003428;
+    border-bottom: 2px solid #03955e;
+}
+
+article a:hover {
+    color: #03955e;
 }
 
 #trainers,
@@ -188,16 +195,12 @@ article a {
     width: 1000px;
 }
 
-#trainers h2,
-#trainings h2 {
-    width: 800px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .links {
     display: inline;
     margin-top: 16px;
+}
+.links a {
+    border: none;
 }
 
 .links i {
@@ -208,7 +211,7 @@ article a {
 }
 
 .links a:hover i {
-    color: #92e080;
+    color: #03955e;
 }
 
 .links a:first-child i {
