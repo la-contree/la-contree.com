@@ -50,6 +50,10 @@ a {
     color: rgba(255, 100, 30, .8);
 }
 
+ul > li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
 blockquote {
     margin: 2rem 2rem 2rem 1rem;
     padding: 0 0 0 1rem;
@@ -104,11 +108,6 @@ section {
 
 section:first-of-type {
     margin-top: 0;
-}
-
-.intro {
-    padding: 1rem 2rem 0 2rem;
-    background-color: #206643;
 }
 
 article {
