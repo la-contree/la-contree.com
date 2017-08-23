@@ -22,8 +22,8 @@ body {
 
 @font-face {
   font-family: 'falling-sky_black';
-  src:  url('../fonts/FallingSkyBlk.woff2') format('woff2'),
-  url('../fonts/FallingSkyBlk.woff') format('woff');
+  src:  url('fonts/FallingSkyBlk.woff2') format('woff2'),
+  url('fonts/FallingSkyBlk.woff') format('woff');
 }
 
 h2 {
@@ -79,13 +79,13 @@ header p {
 header h1 {
     margin: 0;
     padding: 0;
-    font-size: 4rem;
+    font-size: 55px;
     font-weight: 900;
     text-transform: uppercase;
 }
 
 header h1 span {
-    font-size: 4.8rem;
+    font-size: 83px;
 }
 
 header p {
