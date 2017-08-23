@@ -50,6 +50,10 @@ a {
     color: rgba(255, 100, 30, .8);
 }
 
+ul {
+    margin-bottom: 25px;
+}
+
 ul > li:not(:last-child) {
     margin-bottom: 10px;
 }
