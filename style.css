@@ -205,12 +205,24 @@ article a:hover {
 }
 
 /* Template Formation */
+.formation {
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+    color: #fff;
+    background: none;
+}
 .formation p {
     margin: 0 0 1rem;
 }
 
 .formation a {
     margin: 0;
+    color: #fff;
+}
+
+.formation h3 {
+    color: #92e080;
 }
 
 .tags {
