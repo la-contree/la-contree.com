@@ -158,7 +158,7 @@
             </span>
         </article>
         <article>
-                <h3>Emmanuel Gaillot<span class=baseline>Faites des trucs</span></h3>
+                <h3>Yannick François<span class=baseline>Faites des trucs</span></h3>
                 <img src=img/humains/blur.jpg>
                 <p>Juste avant de coder, il faut savoir <em>quoi</em> coder.</p>
                 <p>EventStorming est une approche simple pour partager et construire une connaissance du domaine métier de façon collaborative.</p>
@@ -455,12 +455,12 @@
 </footer>
 
 <script>
-    // Create an array with 0 to n values and shuffle
+    // Create an array with 0 to n values and pseudo-shuffle
     const serie = Array.apply(null, {length: 21})
         .map(Number.call, Number)
         .sort(() => 0.5 - Math.random())
     const portraits = document.querySelectorAll('section#trainers img')
-console.log(serie)
+
     Array.from(portraits).map(img => {
         img.src = `img/humains/${serie.pop()+1}.jpg`
     })
