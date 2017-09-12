@@ -1,10 +1,22 @@
 <link rel=stylesheet href=../style.css>
 <meta charset=utf-8>
 <title>Dansons sur le volcan</title>
-
 <header>
     <h1>La &nbsp;<span>C</span>ontrée</h1>
 </header>
+<style>
+    ul.subscribers {
+        columns: 3 15em;
+    }
+    li {
+        list-style-type: none;
+    }
+    [type="checkbox"] {
+        width: 1.8em;
+        height: 1.8em;
+        padding-top: 1em;
+    }
+</style>
 
 <section>
     <h2>Kézako ?</h2>
@@ -16,16 +28,6 @@
     <h2>C'est quoi le format ?</h2>
     <p>Un open-space ou un truc du genre.</p>
 
-    <h2>Pour les dates ça m'arrange pô ?</h2>
-    <p>Elles ont été choisies arbitrairement, ça peut encore se modifier.</p>
-    <p>Pis tu peux venir avant et après, on bossera ensemble pour consolider et pour préparer.</p>
-
-    <h2>Je peux pas venir !</h2>
-    <p>J'ai envie de te demander avec précaution : pourquoi ?</p>
-    <p>Peut-être est-ce un problème logistique, une appréhension, un vertige.</p>
-    <p>On pourrait peut-être t'aider à virer les obstacles qui empêche ta venue.</p>
-    <p>N'hésite pas à nous contacter, tu es important.e.s pour nous.</p>
-
     <h2>On va faire quoi ?</h2>
     <p>On va se rencontrer, faire des trucs ensemble, s'aligner.</p>
     <p>On va dessiner - La Contrée - construire la vision et découvrir les valeurs.</p>
@@ -35,6 +37,9 @@
         <li>Des balades, du sport, de la méditation, du cheval, de la grimpe.</li>
         <li>Des informelles, beaucoup d'informelles.</li>
     </ul>
+
+    <h2>Plus précisément ?</h2>
+
 
     <h2>On pourra changer le nom aussi ?</h2>
     <p>Oui, le nom, les photos de fromages, l'objectif, la vision, les valeurs, tout.</p>
@@ -82,6 +87,44 @@
         <p>Plus généralement, on souhaite que tout le monde puisse se sentir tranquille et en sécurité pendant le séjour.</p>
     </blockquote>
 
+    <h2>Pour les dates ça m'arrange pô ?</h2>
+    <p>Elles ont été choisies arbitrairement, ça peut encore se modifier.</p>
+    <p>Pis tu peux venir avant et après, on bossera ensemble pour consolider et pour préparer.</p>
+
+    <h2>Je peux pas venir !</h2>
+    <p>J'ai envie de te demander avec précaution : pourquoi ?</p>
+    <p>Peut-être est-ce un problème logistique, une appréhension, un vertige.</p>
+    <p>On pourrait peut-être t'aider à virer les obstacles qui empêche ta venue.</p>
+    <p>N'hésite pas à nous contacter, tu es important.e.s pour nous.</p>
+
+    <h2>Je viens !</h2>
+    <form action=https://formcarry.com/s/rym1H2Bqb method=POST accept-charset=utf-8>
+        <ul class=subscribers>
+            <li><input type=checkbox> Antoine Cézar</li>
+            <li><input type=checkbox checked> Antoine Vernois</li>
+            <li><input type=checkbox checked> Stéphane Langlois</li>
+            <li><input type=checkbox> Sabine Safi</li>
+            <li><input type=checkbox> Laurent Marseault</li>
+            <li><input type=checkbox> Juliette Palumbo</li>
+            <li><input type=checkbox> Thibault Jouannic</li>
+            <li><input type=checkbox> Erick Gardin</li>
+            <li><input type=checkbox> Julia Barbelane</li>
+            <li><input type=checkbox> Maïtané Lenoir</li>
+            <li><input type=checkbox> Fabien Trégan</li>
+            <li><input type=checkbox> Pascal Romain</li>
+            <li><input type=checkbox> Thomas Parisot</li>
+            <li><input type=checkbox> David Bruant</li>
+            <li><input type=checkbox> Claude Aubry</li>
+            <li><input type=checkbox> Raphaël Pierquin</li>
+            <li><input type=checkbox> Emmanuel Gaillot</li>
+            <li><input type=checkbox> Yannick François</li>
+            <li><input type=checkbox> Alyssa Daoud</li>
+            <li><input type=checkbox> Thomas Wolff</li>
+            <li><input type=checkbox> Lilian Ricaud</li>
+        </ul>
+        <input type=hidden name=subscriber value=unknown>
+    </form>
+
     <h2>Contact</h2>
     <p>Tu peux appeler Stéphane :</p>
     <ul>
@@ -90,6 +133,15 @@
         <li><a href=https://yeswiki.slack.com/messages/C6EJSMD7W>La Contrée</a></li>
     </ul>
 
-
-# Dress code (<>)
-# programme
+    <script>
+        const form = document.querySelector('form')
+        const subscribers = document.querySelectorAll('input[type=checkbox]')
+        const hidden = document.querySelector('input[type=hidden]')
+        Array.from(subscribers).map(subscriber =>
+            subscriber.onclick = checkbox => {
+                hidden.name = subscriber.parentElement.innerText
+                hidden.value = checkbox.target.checked
+                form.submit()
+            }
+        )
+    </script>
