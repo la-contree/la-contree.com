@@ -98,32 +98,7 @@
     <p>N'hésite pas à nous contacter, tu es important.e.s pour nous.</p>
 
     <h2>Je viens !</h2>
-    <form action=https://formcarry.com/s/rym1H2Bqb method=POST accept-charset=utf-8>
-        <ul class=subscribers>
-            <li><input type=checkbox> Antoine Cézar</li>
-            <li><input type=checkbox checked> Antoine Vernois</li>
-            <li><input type=checkbox checked> Stéphane Langlois</li>
-            <li><input type=checkbox> Sabine Safi</li>
-            <li><input type=checkbox> Laurent Marseault</li>
-            <li><input type=checkbox> Juliette Palumbo</li>
-            <li><input type=checkbox> Thibault Jouannic</li>
-            <li><input type=checkbox> Erick Gardin</li>
-            <li><input type=checkbox> Julia Barbelane</li>
-            <li><input type=checkbox> Maïtané Lenoir</li>
-            <li><input type=checkbox> Fabien Trégan</li>
-            <li><input type=checkbox> Pascal Romain</li>
-            <li><input type=checkbox> Thomas Parisot</li>
-            <li><input type=checkbox> David Bruant</li>
-            <li><input type=checkbox> Claude Aubry</li>
-            <li><input type=checkbox> Raphaël Pierquin</li>
-            <li><input type=checkbox> Emmanuel Gaillot</li>
-            <li><input type=checkbox> Yannick François</li>
-            <li><input type=checkbox> Alyssa Daoud</li>
-            <li><input type=checkbox> Thomas Wolff</li>
-            <li><input type=checkbox> Lilian Ricaud</li>
-        </ul>
-        <input type=hidden name=subscriber value=unknown>
-    </form>
+    <ul class=subscribers></ul>
 
     <h2>Contact</h2>
     <p>Tu peux appeler Stéphane :</p>
@@ -134,14 +109,33 @@
     </ul>
 
     <script>
-        const form = document.querySelector('form')
-        const subscribers = document.querySelectorAll('input[type=checkbox]')
-        const hidden = document.querySelector('input[type=hidden]')
-        Array.from(subscribers).map(subscriber =>
-            subscriber.onclick = checkbox => {
-                hidden.name = subscriber.parentElement.innerText
-                hidden.value = checkbox.target.checked
-                form.submit()
-            }
-        )
+        const createList = (ul, subscribers) => {
+            subscribers.map(subscriber => {
+                const li = document.createElement('li')
+                li.innerHTML =
+                    `<input type=checkbox id=${subscriber.id} ${subscriber.checked ? 'checked' : ''}> ${subscriber.name}`
+                ul.appendChild(li)
+            })
+        }
+
+        const checkboxesOnclick = (subscribers) => {
+            const checkboxes = document.querySelectorAll('input[type=checkbox]')
+
+            Array.from(checkboxes).map(subscriber =>
+                subscriber.onclick = checkbox => {
+                    subscribers[checkbox.target.id] = checkbox.target.checked
+                    fetch('https://api.myjson.com/bins/1ck5dp', {method: 'PUT', data: subscribers}).then(status => console.log(status))
+                }
+            )
+        }
+
+        fetch('https://api.myjson.com/bins/1ck5dp')
+            .then(response => response.json())
+            .then(json => {
+                const ul = document.querySelector('ul.subscribers')
+                createList(ul, json)
+                checkboxesOnclick(json)
+            })
     </script>
+
+
