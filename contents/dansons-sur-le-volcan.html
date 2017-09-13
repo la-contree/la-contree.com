@@ -8,11 +8,9 @@
     ul.subscribers {
         columns: 3 15em;
     }
-    
     li {
         list-style-type: none;
     }
-    
     [type="checkbox"] {
         width: 1.8em;
         height: 1.8em;
@@ -23,7 +21,7 @@
 <section>
     <h2>Kézako ?</h2>
     <p>Viens, on va prendre de la hauteur pour co-construire la Contrée.</p>
-    <p>Du mardi 14 au vendredi 17 novembre, Stéphane propose de se retrouver à <a href=http://www.equisud.com>Equisud</a> dans les Pyrennées.</p>
+    <p>Du mardi 14 au vendredi 17 novembre, Stéphane propose de se retrouver à <a href=http://www.equisud.com>Equisud</a> dans les Pyrénées.</p>
 </section>
 <hr>
 <section>
@@ -41,15 +39,7 @@
     </ul>
 
     <h2>Plus précisément ?</h2>
-    <p>Quelques exemples d'ateliers que l'on pourrait jouer :</p>
-    <ul>
-        <li>Un atelier photo pour remplacer les images de binômes actuelles.</li>
-        <li>Trouver ou valider le nom de l'actuelle Contrée.</li>
-        <li>Comment on fait rentrer des nouvelles têtes ?</li>
-        <li>Si on fait pas de manifesto, on fait comment pour s'aligner sur les valeurs ?</li>
-        <li>Vous ne trouvez pas que ça manque de diversités ?</li>
-        <li>Comment on pourrait en vivre un peu ?</li>
-    </ul>
+
 
     <h2>On pourra changer le nom aussi ?</h2>
     <p>Oui, le nom, les photos de fromages, l'objectif, la vision, les valeurs, tout.</p>
@@ -78,7 +68,7 @@
 
     <h2>C'est beau ?</h2>
     <p>Non c'est magnifique, grandiose, ressourçant.</p>
-    <p>C'est pas du marketing, c'est juste les Pyrennées.</p>
+    <p>C'est pas du marketing, c'est juste les Pyrénées.</p>
 
     <h2>Il y a des transports en communs pour venir ?</h2>
     <ul>
@@ -107,8 +97,7 @@
     <p>On pourrait peut-être t'aider à virer les obstacles qui empêche ta venue.</p>
     <p>N'hésite pas à nous contacter, tu es important.e.s pour nous.</p>
 
-    <h2 id=subscribe>Je viens !</h2>
-    <p>Coche ta case, et on saura (les autres aussi :p).</p>
+    <h2>Je viens !</h2>
     <ul class=subscribers></ul>
 
     <h2>Contact</h2>
@@ -120,32 +109,27 @@
     </ul>
 
     <script>
-        const createList = (ul, subscribers) =>
+        const createList = (ul, subscribers) => {
             subscribers.map(subscriber => {
                 const li = document.createElement('li')
                 li.innerHTML =
                     `<input type=checkbox id=${subscriber.id} ${subscriber.checked ? 'checked' : ''}> ${subscriber.name}`
                 ul.appendChild(li)
             })
+        }
 
         const checkboxesOnclick = (subscribers) => {
             const checkboxes = document.querySelectorAll('input[type=checkbox]')
 
             Array.from(checkboxes).map(subscriber =>
                 subscriber.onclick = checkbox => {
-                    subscribers[checkbox.target.id].checked = checkbox.target.checked
-                    fetch('https://api.myjson.com/bins/1ck5dp', {
-                        method: 'PUT',
-                        body: JSON.stringify(subscribers),
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    })
+                    subscribers[checkbox.target.id] = checkbox.target.checked
+                    fetch('https://api.myjson.com/bins/zz2f9', {method: 'PUT', data: subscribers, mode: 'cors'}).then(status => console.log(status))
                 }
             )
         }
 
-        fetch('https://api.myjson.com/bins/1ck5dp')
+        fetch('https://api.myjson.com/bins/zz2f9')
             .then(response => response.json())
             .then(json => {
                 const ul = document.querySelector('ul.subscribers')
@@ -153,3 +137,5 @@
                 checkboxesOnclick(json)
             })
     </script>
+
+
