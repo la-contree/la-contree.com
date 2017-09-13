@@ -118,26 +118,28 @@
     </ul>
 
     <script>
-        const createList = (ul, subscribers) => {
+        const createList = (ul, subscribers) =>
             subscribers.map(subscriber => {
                 const li = document.createElement('li')
                 li.innerHTML =
                     `<input type=checkbox id=${subscriber.id} ${subscriber.checked ? 'checked' : ''}> ${subscriber.name}`
                 ul.appendChild(li)
             })
-        }
-
         const checkboxesOnclick = (subscribers) => {
             const checkboxes = document.querySelectorAll('input[type=checkbox]')
-
             Array.from(checkboxes).map(subscriber =>
                 subscriber.onclick = checkbox => {
-                    subscribers[checkbox.target.id] = checkbox.target.checked
-                    fetch('https://api.myjson.com/bins/zz2f9', {method: 'PUT', data: subscribers, mode: 'cors'}).then(status => console.log(status))
+                    subscribers[checkbox.target.id].checked = checkbox.target.checked
+                    fetch('https://api.myjson.com/bins/zz2f9', {
+                        method: 'PUT',
+                        body: JSON.stringify(subscribers),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    })
                 }
             )
         }
-
         fetch('https://api.myjson.com/bins/zz2f9')
             .then(response => response.json())
             .then(json => {
