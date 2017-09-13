@@ -41,7 +41,15 @@
     </ul>
 
     <h2>Plus précisément ?</h2>
-
+    <p>Quelques exemples d'ateliers que l'on pourrait jouer :</p>
+    <ul>
+        <li>Un atelier photo pour remplacer les images de binômes actuelles.</li>
+        <li>Trouver ou valider le nom de l'actuelle Contrée.</li>
+        <li>Comment on fait rentrer des nouvelles têtes ?</li>
+        <li>Si on fait pas de manifesto, on fait comment pour s'aligner sur les valeurs ?</li>
+        <li>Vous ne trouvez pas que ça manque de diversités ?</li>
+        <li>Comment on pourrait en vivre un peu ?</li>
+    </ul>
 
     <h2>On pourra changer le nom aussi ?</h2>
     <p>Oui, le nom, les photos de fromages, l'objectif, la vision, les valeurs, tout.</p>
@@ -100,6 +108,7 @@
     <p>N'hésite pas à nous contacter, tu es important.e.s pour nous.</p>
 
     <h2>Je viens !</h2>
+    <p>Coches ta case, et on saura (les autres aussi :p).</p>
     <ul class=subscribers></ul>
 
     <h2>Contact</h2>
@@ -111,14 +120,13 @@
     </ul>
 
     <script>
-        const createList = (ul, subscribers) => {
+        const createList = (ul, subscribers) =>
             subscribers.map(subscriber => {
                 const li = document.createElement('li')
                 li.innerHTML =
                     `<input type=checkbox id=${subscriber.id} ${subscriber.checked ? 'checked' : ''}> ${subscriber.name}`
                 ul.appendChild(li)
             })
-        }
 
         const checkboxesOnclick = (subscribers) => {
             const checkboxes = document.querySelectorAll('input[type=checkbox]')
