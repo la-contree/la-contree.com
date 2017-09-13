@@ -8,9 +8,11 @@
     ul.subscribers {
         columns: 3 15em;
     }
+    
     li {
         list-style-type: none;
     }
+    
     [type="checkbox"] {
         width: 1.8em;
         height: 1.8em;
@@ -123,8 +125,14 @@
 
             Array.from(checkboxes).map(subscriber =>
                 subscriber.onclick = checkbox => {
-                    subscribers[checkbox.target.id] = checkbox.target.checked
-                    fetch('https://api.myjson.com/bins/1ck5dp', {method: 'PUT', data: subscribers}).then(status => console.log(status))
+                    subscribers[checkbox.target.id].checked = checkbox.target.checked
+                    fetch('https://api.myjson.com/bins/1ck5dp', {
+                        method: 'PUT',
+                        body: JSON.stringify(subscribers),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    })
                 }
             )
         }
@@ -137,5 +145,3 @@
                 checkboxesOnclick(json)
             })
     </script>
-
-
