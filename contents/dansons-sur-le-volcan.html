@@ -145,7 +145,7 @@
             Array.from(checkboxes).map(subscriber =>
                 subscriber.onclick = checkbox => {
                     subscribers[checkbox.target.id].checked = checkbox.target.checked
-                    fetch('https://api.myjson.com/bins/zz2f9', {
+                    fetch('https://api.myjson.com/bins/5z0y7', {
                         method: 'PUT',
                         body: JSON.stringify(subscribers),
                         headers: {
