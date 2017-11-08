@@ -188,7 +188,6 @@
     <script>
         const showSubscribersCount = subscribers => {
             const count = subscribers.filter(subscriber => subscriber.checked === true).length
-            console.log('subscribers', count)
             document.querySelector('span.subscribersCount').innerText = count
         }
 
