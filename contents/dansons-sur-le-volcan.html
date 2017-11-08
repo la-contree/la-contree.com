@@ -95,20 +95,22 @@
     <p>Elle s'est approvisionnée à
         <a href=https://lacagette-coop.fr>La Cagette</a> pour un montant de 1220 €.</p>
     <p>En tenant compte de tout ça, le coût global du séjour est estimé à : 130 € par personne pour les quatre jours.</p>
-    <p>Si on explose le budget, ceux qui veulent mettrons un peu plus pour ajuster.</p>
-    <p>Si tu prévois du liquide c'est super, sinon tu peux faire un virement à
-        <a href=http://twitter.com/langlois_s>Stéphane</a>.</p>
+    <p>Si tu prévois du liquide c'est top, sinon tu peux faire un virement à <a href=http://twitter.com/langlois_s>Stéphane</a>.</p>
 
     <h2>Si je reste moins longtemps, je paye pareil ?</h2>
-    <p>Tu peux diviser au prorata de ce qui te semble raisonable.</p>
+    <p>Tu peux soustraire au prorata de ce qui te semble raisonable.</p>
 
     <h2>Si je souhaite payer moins ?</h2>
     <p>Paye moins.</p>
 
     <h2>Si je souhaite payer plus ?</h2>
     <p>Paye plus.</p>
+
+    <h2>Et si on dépasse le budget ?</h2>
+    <p>Ceux qui veulent mettrons un peu plus pour ajuster.</p>
+
+    <h2>Et s'il y a du bénéfice ?</h2>
     <p>Cela permettra de dédommager plus largement Bénédicte, Olivier et Kerstin.</p>
-    <p>Ou bien, d'équilibrer avec les personnes qui souhaiteraient moins payer.</p>
 
     <h2>On va manger quoi ?</h2>
     <p>Si tu manges sans gluten, que tu es végétalien·ne·s ou que tu as des restrictions alimentaires, sois gentil·le·s, préviens
@@ -203,11 +205,12 @@
                 }
                 ul.appendChild(li)
             })
-        const checkboxesOnclick = (subscribers) => {
+        const checkboxesOnclick = subscribers => {
             const checkboxes = document.querySelectorAll('input[type=checkbox]')
             Array.from(checkboxes).map(subscriber =>
                 subscriber.onclick = checkbox => {
-                    subscribers[checkbox.target.id].checked = checkbox.target.checked
+                    const subscriberTarget = subscribers.filter(subscriber => +subscriber.id === +checkbox.target.id)[0]
+                    subscriberTarget.checked = checkbox.target.checked
                     fetch('https://api.myjson.com/bins/14e4z3', {
                         method: 'PUT',
                         body: JSON.stringify(subscribers),
