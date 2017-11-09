@@ -65,7 +65,7 @@
     <ul>
         <li>Des ateliers pour piétiner joyeusement l'intention de départ.</li>
         <li>Des jeux, de la cuisine ouverte, du code.</li>
-        <li>Des balades, du sport, de la méditation, de la grimpe.</li>
+        <li>Des balades, des bains chauds, de la grimpe.</li>
         <li>Des informelles.</li>
     </ul>
 
@@ -164,7 +164,7 @@
         <li>Pour les plus avantur·eux·euses, il y a aussi
             <a href=http://www.pyrenees-cerdagne.com/decouvrir/le-train-jaune/le-parcours>le petit train jaune</a>
         </li>
-        <li>Tu pourrais organiser un covoit' aussi.</li>
+        <li>Le <a href=https://framacalc.org/orga-transport-la_contree>covoit' s'organise</a> aussi.</li>
     </ul>
     <p>Si tu arrives à Mont-Louis, on pourra venir te chercher.</p>
 
@@ -221,7 +221,7 @@
                 subscriber.onclick = checkbox => {
                     const subscriberTarget = subscribers.filter(subscriber => +subscriber.id === +checkbox.target.id)[0]
                     subscriberTarget.checked = checkbox.target.checked
-                    fetch('https://api.myjson.com/bins/14e4z3', {
+                    fetch('https://api.myjson.com/bins/k3asf', {
                         method: 'PUT',
                         body: JSON.stringify(subscribers),
                         headers: {
@@ -231,7 +231,7 @@
                 }
             )
         }
-        fetch('https://api.myjson.com/bins/14e4z3')
+        fetch('https://api.myjson.com/bins/k3asf')
             .then(response => response.json())
             .then(json => {
                 const ul = document.querySelector('ul.subscribers')

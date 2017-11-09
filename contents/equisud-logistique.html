@@ -1,0 +1,69 @@
+<link rel=stylesheet href=../style.css>
+<meta charset=utf-8>
+<title>Dansons sur le volcan</title>
+<header>
+  <h1>14-17 Nov</h1>
+</header>
+<style>
+  table#subscribers {
+    border-width: .5px; 
+    border-style: solid; 
+    border-color: #aaa;
+    padding: 1em;
+  }
+
+  strong {
+    color: #92e080;
+  }
+</style>
+
+<section>
+  <h1>Quelques petits renseignements logistiques.</h1>
+  <table id=subscribers>
+  </table>
+
+  <script>
+    const showSubscribers = json => {
+      const subscribers = json
+        .filter(subscriber => subscriber.checked === true)
+        .map(subscriber => `<tr><td>${subscriber.name}</td></tr>`)
+      const amount = json
+        .filter(subscriber => subscriber.checked === true)
+        .map(subscriber => `<tr><td><input type=field></td></tr>`)
+      document.querySelector('table').innerHTML = subscribers.join('\n')
+    }
+
+    const createList = (ul, subscribers) =>
+      subscribers.map(subscriber => {
+        const li = document.createElement('li')
+        if (subscriber.checked === null) {
+          li.innerHTML = `<strike><input type=checkbox id=${subscriber.id} ${subscriber.checked ? 'checked' : ''}> ${subscriber.name}</strike>`
+        } else {
+          li.innerHTML =
+            `<input type=checkbox id=${subscriber.id} ${subscriber.checked ? 'checked' : ''}> ${subscriber.name}`
+
+        }
+        ul.appendChild(li)
+      })
+    const checkboxesOnclick = subscribers => {
+      const checkboxes = document.querySelectorAll('input[type=checkbox]')
+      Array.from(checkboxes).map(subscriber =>
+        subscriber.onclick = checkbox => {
+          const subscriberTarget = subscribers.filter(subscriber => +subscriber.id === +checkbox.target.id)[0]
+          subscriberTarget.checked = checkbox.target.checked
+          fetch('https://api.myjson.com/bins/k3asf', {
+            method: 'PUT',
+            body: JSON.stringify(subscribers),
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          })
+        }
+      )
+    }
+    fetch('https://api.myjson.com/bins/k3asf')
+      .then(response => response.json())
+      .then(json => {
+        showSubscribers(json)
+      })
+  </script>
