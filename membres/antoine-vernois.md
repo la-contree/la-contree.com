@@ -1,7 +1,7 @@
 ---
 nom: Antoine Vernois
 accroche: Faites des trucs
-image: img/humains/blur.jpg 
+image: img/humains/5.jpg 
 github: https://github.com/avernois
 twitter: https://twitter.com/avernois
 ---

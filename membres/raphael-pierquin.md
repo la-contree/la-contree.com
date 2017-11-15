@@ -1,7 +1,7 @@
 ---
 nom: Raphaël Pierquin
 accroche: La tête dans la tempête
-image: img/humains/blur.jpg 
+image: img/humains/7.jpg 
 github: https://github.com/raphaelpierquin
 twitter: https://twitter.com/perafoo
 ---
