@@ -6,62 +6,36 @@
 <title>La contrée : Viens te ressourcer en affûtant tes outils avec nous.</title>
 
 <section id=trainers>
-    <h2>Les Humains</h2>
+    <h2>Les gens</h2>
+    <div class="grid-3 has-gutter container"></div>
 </section>
 
-<template id=bios>
-    <div class="grid-3 has-gutter">
-        <article>
-            <h3><span class=baseline></span></h3>
-            <img src="">
-            <p></p>
-            <span class=links>
-                <a href=""><i class="fa fa-sitemap"></i></a>
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-envelope-open"></i></a>
-            </span>
-        </article>
-    </div>
+<section id=trainings>
+    <h2>Les trucs qu'on fait</h2>
+    <div class="grid-3 has-gutter container"></div>
+</section>
+
+<template id=trainers>
+    <article>
+        <h3><span class=baseline></span></h3>
+        <img src="">
+        <p></p>
+        <span class=links>
+            <a href=""><i class="fa fa-sitemap"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-github"></i></a>
+            <a href=""><i class="fa fa-envelope-open"></i></a>
+        </span>
+    </article>
 </template>
 
-<script>
-    const bios = document.querySelector('#trainers')
-    const templateBio = document.querySelector('template#bios').content
-    const name = templateBio.querySelector('h3')
-    const baseline = templateBio.querySelector('h3 .baseline')
-    const image = templateBio.querySelector('img')
-    const description = templateBio.querySelector('p')
-    const links = templateBio.querySelector('.links')
+<template id=trainings>
+    <article>
+        <h3><span class="baseline"></span></h3>
+        <img src="">
+        <p></p>
+        <a href=#>En savoir plus</a>
+    </article>
+</template>
 
-    fetch('http://api.daktary.com/la-contree/la-contree.com/blob/bio-markdown/membres/raphael-pierquin.md')
-        .then(response => response.json())
-        .then(bio => {
-            image.src = bio.meta.image
-            baseline.innerText = bio.meta.accroche
-            description.innerHTML = bio.body
-            links.querySelector('.fa-twitter').parentNode.href = bio.meta.twitter
-
-            bios.appendChild(document.importNode(templateBio, true))
-        })
-</script>
-
-
-
-
-
-
-
-
-
-
-<script>
-    // Create an array with 0 to n values and pseudo-shuffle
-    const serie = Array.apply(null, {length: 22})
-        .map(Number.call, Number)
-        .sort(() => 0.5 - Math.random())
-    const portraits = document.querySelectorAll('section#trainers img')
-
-    Array.from(portraits).map(img => {
-        img.src = `img/humains/${serie.pop()+1}.jpg`
-    })
-</script>
+<script src=membres.js></script>
