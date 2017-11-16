@@ -7,7 +7,7 @@ const renderTrainers = () => {
   const description = templateTrainers.querySelector('p')
   const links = templateTrainers.querySelector('.links')
 
-  fetch('http://api.daktary.com/la-contree/la-contree.com/tree/bio-markdown/membres')
+  fetch('http://api.daktary.com/la-contree/la-contree.com/tree/bio-markdown/contenu/membres')
     .then(response => response.json())
     .then(trainers => {
       trainers.body.forEach(trainer => {
@@ -36,7 +36,7 @@ const renderTrainings = () => {
   const description = templateTrainings.querySelector('p')
   const links = templateTrainings.querySelector('a')
 
-  fetch('http://api.daktary.com/la-contree/la-contree.com/tree/bio-markdown/formations')
+  fetch('http://api.daktary.com/la-contree/la-contree.com/tree/bio-markdown/contenu/formations')
     .then(response => response.json())
     .then(trainings =>
       trainings.body.forEach(training => {
