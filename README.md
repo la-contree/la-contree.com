@@ -6,3 +6,10 @@
 ## Idées
 
 - tirage aléatoire des noms d'affichage,
+
+
+## Voir les branches en cours
+
+[branches en cours](https://github.com/la-contree/la-contree.com/network)
+
+
